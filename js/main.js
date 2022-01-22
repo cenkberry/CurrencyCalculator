@@ -1353,7 +1353,6 @@ const rates = {
 var btn    = document.getElementById('btn');
 var amount = document.getElementById('amount').value;
 
-
 function clearBox(clear)
 {
     document.getElementById('box').innerHTML = " ";
@@ -1366,32 +1365,25 @@ btn.addEventListener("click", function myCalc() {
     var currB  = document.getElementById('currency2').value;
     var cur1   = currA.toLowerCase();
     var cur2   = currB.toLowerCase();
-    
+
     var sum =  amount * (rates[cur2].rate / rates[cur1].rate);
-    
-    
+
     var newDiv = document.createElement("div");
-    
     newDiv.className = "col-sm-2 newDiv bg-warning text-center";
-    
     box.insertBefore(newDiv, box.firstChild);
-   
-  
-    
     var h4tag = document.createElement("h4");
     newDiv.appendChild(h4tag);
-    
-    
-    h4tag.innerHTML = amount + 
-                      "<br>" + 
+
+    h4tag.innerHTML = amount +
+                      "<br>" +
                      rates[cur1].code+
                       "<br>" +
                        " ↓ " +
                       "<br>" +
                     sum.toFixed(2) +
-                      "<br>" + 
-                     rates[cur2].name;  
-   
+                      "<br>" +
+                     rates[cur2].name;
+
 });
 
 
